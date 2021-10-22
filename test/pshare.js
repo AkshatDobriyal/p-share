@@ -1,5 +1,5 @@
-const { assert } = require('console');
-const { isTypedArray } = require('util/types');
+//const { assert } = require('console');
+//const { isTypedArray } = require('util/types');
 
 const PShare = artifacts.require('./PShare.sol');
 
@@ -8,7 +8,7 @@ require('chai')
     .should()
 
 contract('PShare', ([deployer, author, tipper]) => {
-    let PShare
+    let pShare
 
     before(async() => {
         pShare = await PShare.deployed() 
@@ -34,8 +34,8 @@ contract('PShare', ([deployer, author, tipper]) => {
         const imageHash = "QmV8cfu6n4NT5xRr2AHdKxFMTZEJrA44qgrBCr739BN9Wb"
 
         before(async() => {
-            result = pShare.uploadImage(imageHash, "Image Description", {from: author})
-            imageCount = pShare.imageCount()
+            result = await pShare.uploadImage(imageHash, "Image Description", {from: author})
+            imageCount = await pShare.imageCount()
         })
 
         // check event
@@ -87,7 +87,7 @@ contract('PShare', ([deployer, author, tipper]) => {
 
             // check if author received funds
             let newAuthorBalance
-            newAuthorBlaance = await web3.eth.getBalance(author)
+            newAuthorBalance = await web3.eth.getBalance(author)
             newAuthorBalance = new web3.utils.BN(newAuthorBalance)
 
             let tipImageOwner

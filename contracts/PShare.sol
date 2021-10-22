@@ -8,13 +8,12 @@ contract PShare {
     struct Image {
         uint id;
         string imageHash;
-        string descriprion;
+        string description;
         uint tipAmount;
         address payable author;
-
     }
 
-    mapping(uint => Image) images;
+    mapping(uint => Image) public images;
 
     constructor() public {
         name = "PShare";
@@ -23,7 +22,7 @@ contract PShare {
     event ImageUploaded(
         uint id,
         string imageHash,
-        string descriprion,
+        string description,
         uint tipAmount,
         address payable author
     );
@@ -46,10 +45,11 @@ contract PShare {
 
         imageCount++;
 
-        images[imageCount] = Image(imageCount, _imageHash, _description, 0, msg.sender);
+        address payable _author = address(uint160(msg.sender));
+        images[imageCount] = Image(imageCount, _imageHash, _description, 0, _author);
 
         // trigger event
-        emit ImageUploaded(imageCount, _imageHash, _description, 0, msg.sender);
+        emit ImageUploaded(imageCount, _imageHash, _description, 0, _author);
 
     }
 
@@ -64,7 +64,7 @@ contract PShare {
         address payable _author = _image.author;
 
         // pay the author by sending ethers
-        address(_author).transfer(msg.value);
+        _author.transfer(msg.value);
 
         // increment the tip amount;
         _image.tipAmount += msg.value;
