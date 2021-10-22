@@ -1,0 +1,98 @@
+.nav{
+    display: flex;
+    flex-flow: column;
+    width: 1440px;
+    background: #2B364B;
+    
+    &__header{
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        box-sizing: border-box;
+        align-items: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 40px;
+        position: relative;
+        height: 100px;
+
+        &__logo{
+            display: flex;
+            flex-flow: justify-content;
+            position: relative;
+            width: 524px;
+            margin-left: 47px;
+            margin-top: 0px;
+            color: #FFFFFF;
+            vertical-align: middle;
+            /*&img{
+                width: 139px;
+                height: 156px;
+            }*/
+            a{
+                text-decoration: none;
+                color:#FFFFFF;
+            }
+        }
+        &__list{
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row;
+            vertical-align: middle;
+            //gap: 1rem;
+            //grid-template-columns: repeat(5, minmax(0, 1fr));
+            text-align: center;
+            list-style-type: none;
+            box-sizing: border-box;
+            width: 916px;
+            margin-left: 338px;
+            position: relative;
+            margin-right: 48px;
+            height: inherit;
+            padding: auto;
+            flex: auto;
+            margin-top: 30px;
+            &__element{
+                flex: auto;
+                box-sizing: border-box;
+                font-size: 22px;
+                font-weight: 400;
+                text-decoration: none;
+                text-align: center;
+                align-items: center;
+                //margin-right: 40px;
+                color: #FFFFFF;
+                position: relative;
+                padding-top: none;
+                justify-content: center;
+                white-space: nowrap;
+                &__login{
+                    border: none;
+                    height: 46px;
+                    width: 500px;
+                    padding: 9px 21px;
+                    margin-top: 34px;
+                    //margin-right: 48px;
+                    border-radius: 24px;
+                    font-size: 18px;
+                    font-weight: 525;
+                    text-decoration: none;
+                    text-align: center;
+                    align-items: center;
+                    color: #2B364B;
+                    background-color: #FFFFFF;
+                }
+                &__photo{
+                    border: none;
+                    height: 40px;
+                    width: 40px;
+                    //padding: 9px 21px;
+                    margin-top: 36px;
+                    //margin-right: 40px;
+                    //border-radius: 24px;
+                    align-items: center;
+                }
+
+            }
+        }
+    }
+}
