@@ -95,36 +95,52 @@ class LandingPage extends Component {
       <form className="landingPage__form"onSubmit={(event) => {
           event.preventDefault()
           const description = this.imageDescription.value
-          this.props.uploadImage(description)
+          this.props.uploadImage(String(description))
       }} >
         <h3 className="landingPage__form__head">Share Image</h3>
 
         <div className="landingPage__form__elem">
-          <input type='file' accept=".jpg, .jpeg, .png, .bmp, .gif" onChange={this.props.captureFile} />
+
+          <label htmlFor="contained-button-file">
+            <Input accept="image/*" id="contained-button-file" multiple type="file" onChange={this.props.captureFile}/>
+            <Button variant="contained" component="span">
+              Upload
+            </Button>
+          </label>
+          <label htmlFor="icon-button-file">
+            <Input accept="image/*" id="icon-button-file" type="file" onChange={this.props.captureFile}/>
+            <IconButton color="primary" aria-label="upload picture" component="span">
+              <PhotoCamera />
+            </IconButton>
+          </label>
         </div>
+        <br/>
         <div className="landingPage__form__elem">
-        <br></br>
           <TextField
+            sx={{ m: 1, width: '40ch' }}
             label="Caption"
             id="imageDescription"
+            helperText="Please Enter Image Description"
+            color="warning"
             type="text"
-            ref={(input) => { this.imageDescription = input }}
-            className="landingPage__form__elem"
+            //ref={(input) => { this.imageDescription = input }}
+            onChange={(e) => { this.imageDescription = e.target.value}}
+            className="landingPage__form__elem__desc"
             placeholder="Image Description"
             required />
         </div>
         <br/>
         <Button type="submit" variant="contained" endIcon={<SendIcon />}>
-          Upload
+          Send
         </Button>
       </form>
 
+      <br/>
       {this.props.images.map((image, key) => {
         return (
           <div className="landingPage__card" key={key} >
-          
             <Card sx={{ maxWidth: 345 }}>
-              <CardHeader
+              <CardHeader className="landingPage__card__header"
                 avatar={
                   <img
                     className='mr-2'
@@ -133,7 +149,7 @@ class LandingPage extends Component {
                     src={`data:image/png;base64,${new Identicon(image.author, 30).toString()}`}
                   />
                 }
-
+                
                 title={image.author}
                 //subheader="September 14, 2016"
               />
@@ -144,11 +160,14 @@ class LandingPage extends Component {
                 alt="image"
               />
               <CardContent>
-                <Typography variant="body2" color="color: #2B364B;">
-                  {image.description}
+                <Typography variant="body2" color="#2B364B">
+                  <div className="landingPage__card__text">
+                    {image.description}
+                  </div>
                 </Typography>
               </CardContent>
             </Card>
+            <br/>
           </div>
         )
       })}
