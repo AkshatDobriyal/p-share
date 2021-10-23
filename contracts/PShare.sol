@@ -10,7 +10,7 @@ contract PShare {
         string imageHash;
         string description;
         uint tipAmount;
-        address payable author;
+        address author;
     }
 
     mapping(uint => Image) public images;
@@ -24,7 +24,7 @@ contract PShare {
         string imageHash,
         string description,
         uint tipAmount,
-        address payable author
+        address author
     );
 
     event ImageTipped(
@@ -32,7 +32,7 @@ contract PShare {
         string imageHash,
         string description,
         uint tipAmount,
-        address payable author
+        address author
     );
 
     function uploadImage(string memory _imageHash, string memory _description) public {
@@ -45,15 +45,15 @@ contract PShare {
 
         imageCount++;
 
-        address payable _author = address(uint160(msg.sender));
-        images[imageCount] = Image(imageCount, _imageHash, _description, 0, _author);
+        //address payable _author = address(uint160(msg.sender));
+        images[imageCount] = Image(imageCount, _imageHash, _description, 0, msg.sender);
 
         // trigger event
-        emit ImageUploaded(imageCount, _imageHash, _description, 0, _author);
+        emit ImageUploaded(imageCount, _imageHash, _description, 0, msg.sender);
 
     }
 
-    function tipImageOwner(uint _id) public payable {
+    /*function tipImageOwner(uint _id) public payable {
         // check if the id is valid
         require(_id > 0 && _id <= imageCount, "Invalid image id");
 
@@ -61,10 +61,10 @@ contract PShare {
         Image memory _image = images[_id];
 
         // fetch the author
-        address payable _author = _image.author;
+        address _author = _image.author;
 
         // pay the author by sending ethers
-        _author.transfer(msg.value);
+        payable(_author).transfer(msg.value);
 
         // increment the tip amount;
         _image.tipAmount += msg.value;
@@ -75,5 +75,6 @@ contract PShare {
         // trigger event
         emit ImageTipped(_id, _image.imageHash, _image.description, _image.tipAmount, _author);
     }
+    */
 
 }
