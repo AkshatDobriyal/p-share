@@ -3,10 +3,15 @@
     flex-flow: column;
     width: 1440px;
     height: 2274px;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    font-family: 'Avenir Next', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     //height: 2090px;
-    background: #2B364B;
+    //background: #2B364B;
 
-    &__head{
+    &__form{
         width: 1440px;
         display: flex;
         flex-flow: column;
@@ -16,256 +21,14 @@
         text-align: center;
         font-family: 'Avenir Next', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         //position: relative;
-        
-        &__players{
-            position: absolute;
-            width: 152px;
-            height: 54px;
-            margin-left: auto;
-            //margin-top: 295px;
-            margin-top: 111px;
-
-            font-style: italic;
-            font-weight: 800;
-            font-size: 40px;
-            line-height: 55px;
-
-            color: #FFFFFF;
-
-            opacity: 0.35;
-        }
-
-        &__matches{
-            position: absolute;
-            width: 300px;
-            height: 96px;
-            margin-left: auto;
-            //margin-top: 361px;
-            margin-top: 177px;
-
-            font-style: italic;
-            font-weight: 800;
-            font-size: 70px;
-            line-height: 96px;
-            /* identical to box height */
-
-
-            color: #FFFFFF;
-
-            opacity: 0.6;   
-        }
-        &__line1{
-            position: absolute;
-            width: 698px;
-            height: 3px;
-            margin-left: auto;
-            //margin-top: 462px;
-            margin-top: 278px;
-
-            background: #FFFFFF;
-            box-shadow: 0px 0px 17px 2px rgba(255, 255, 255, 0.25);
-        }
-
-        &__auctions{
-            position: absolute;
-            width: 449px;
-            height: 137px;
-            margin-left: auto;
-            //margin-top: 457px;
-            margin-top: 273px;
-
-            font-style: italic;
-            font-weight: 800;
-            font-size: 100px;
-            line-height: 137px;
-            /* identical to box height */
-
-
-            color: #FFFFFF;
-        }
-        &__line2{
-            position: absolute;
-            width: 698px;
-            height: 3px;
-            margin-left: auto;
-            //margin-top: 578px;
-            margin-top: 394px;
-
-            background: #FFFFFF;
-            box-shadow: 0px 0px 17px 2px rgba(255, 255, 255, 0.25);
-
-        }
-
-        &__games{
-            position: absolute;
-            width: 241px;
-            height: 96px;
-            margin-left: auto;
-            //margin-top: 594px;
-            margin-top: 410px;
-
-            font-style: italic;
-            font-weight: 800;
-            font-size: 70px;
-            line-height: 96px;
-            /* identical to box height */
-
-
-            color: #FFFFFF;
-
-            opacity: 0.6;
-        }
-
-        &__teams{
-            position: absolute;
-            width: 152px;
-            height: 54px;
-            margin-left: auto;
-            //margin-top: 702px;
-            margin-top: 518px;
-            //text-align: left;
-
-            font-style: italic;
-            font-weight: 800;
-            font-size: 40px;
-            line-height: 55px;
-
-            color: #FFFFFF;
-
-            opacity: 0.35;
-        }
-
-        &__dot{
-            position: absolute;
-            display: flex;
-            flex-flow: row;
-            padding-left: 13px;
-            //margin-top: 785px;
-            margin-top: 601px;
-            margin-left: auto;
-
-            &__dot1{
-                width: 14px;
-                height: 14px;
-                //display: inline-block;
-                margin-right: 13px;
-                border-radius: 50%;
-                border: 1px solid #FFFFFF
-            }
-            &__dot2{
-                width: 14px;
-                height: 14px;
-                margin-right: 13px;
-                //display: inline-block;
-                border-radius: 50%;
-                background-color: #FFFFFF;
-                border: 1px solid #FFFFFF;
-            }
-        }
-    }
-
-    &__mid{
-        position: absolute;
-        width: 1440px;
-        height: 2px;
-        //margin-left: auto;
-        //margin-top: 893px;
-        margin-top: 709px;
-
-        background: #FFFFFF;
-    }
-
-    &__content{
-        height: 1117px;
-        width: 1440px;
-
-        &__title{
-            position: absolute;
-            margin-left: 142px;
-            
-            &__arcadia{
-                position: absolute;
-                width: 163px;
-                height: 33px;
-                //margin-left: 142px;
-                //margin-top: 968px;
-                margin-top: 784px;
-
-                /*font-family: 'Origin Tech Demo';
-                font-style: normal;
-                font-weight: normal;
-                font-size: 35px;*/
-                line-height: 33px;
-                /* identical to box height */
-
-
-                color: #FFFFFF;
-            }
-        }
-        &__desc{
-            position: absolute;
-            width: 1209px;
-            height: 360px;
-            margin-left: 142px;
-            //margin-top: 1037px;
-            margin-top: 853px;
-
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-style: normal;
-            font-weight: 400;
-            font-size: 26px;
-            text-align: left;
-            line-height: 30px;
-
-            color: #FFFFFF;
-        }
-        &__tags{
-            position: absolute;
-            margin-left: 140px;
-            &__tag1{
-                position: absolute;
-                width: 621px;
-                height: 67px;
-                //margin-left: 140px;
-                //margin-top: 1525px;
-                margin-top: 1341px;
-
-                /*font-family: 'Take Cover';
-                font-style: normal;
-                font-weight: normal;
-                font-size: 50px;
-                line-height: 58px;
-                color: #FFFFFF;*/
-            }
-            &__tag2{
-                position: absolute;
-                width: 737px;
-                height: 67px;
-                //margin-left: 142px;
-                //margin-top: 1643px;
-                margin-top: 1459px;
-
-                /*font-family: 'Take Cover';
-                font-style: normal;
-                font-weight: normal;
-                font-size: 50px;
-                line-height: 58px;
-                color: #FFFFFF;*/
-            }
-            &__tag3{
-                position: absolute;
-                width: 882px;
-                height: 67px;
-                //margin-right: 140px;
-                //margin-top: 1768px;
-                margin-top: 1584px;
-
-                /*font-family: 'Take Cover';
-                font-style: normal;
-                font-weight: normal;
-                font-size: 50px;
-                line-height: 58px;
-                color: #FFFFFF;*/
+        &__elem{
+            font-size: 20px;
+            align-items: center;
+            text-align: center;
+            &__head{
+                font-size: 30px;
+                align-items: center;
+                text-align: center;
             }
         }
     }
