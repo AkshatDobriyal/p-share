@@ -2,7 +2,7 @@
     display: flex;
     flex-flow: column;
     width: 1440px;
-    height: 2274px;
+    //height: 2274px;
     align-items: center;
     text-align: center;
     font-weight: 600;
@@ -25,11 +25,31 @@
             font-size: 20px;
             align-items: center;
             text-align: center;
-            &__head{
-                font-size: 30px;
-                align-items: center;
-                text-align: center;
+            &__choose{
+                color: #2B364B;
+                margin: auto;
             }
+            &__desc{
+
+            }
+        }
+        &__head{
+            color: #2B364B;
+            font-size: 30px;
+            align-items: center;
+            text-align: center;
+        }
+    }
+    &__card{
+        font-size: 18px;
+        font-weight: 600;
+        &__header{
+            font-size: 18px;
+            font-weight: 600;
+        }
+        &__text{
+            font-size: 18px;
+            font-weight: 500;
         }
     }
 }
