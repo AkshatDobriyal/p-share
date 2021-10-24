@@ -46,10 +46,21 @@
         &__header{
             font-size: 18px;
             font-weight: 600;
+            &__photo{
+                border-radius: 50%;
+            }
+            &__address{
+                background-color: #2B364B;
+                border-radius: 24px;
+                color: #FFFFFF;
+                padding: 7px 15px;
+                font-size: 14px;
+                font-weight: 600;
+            }
         }
         &__text{
-            font-size: 18px;
-            font-weight: 500;
+            font-size: 20px;
+            font-weight: 550;
         }
     }
 }

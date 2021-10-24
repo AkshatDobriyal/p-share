@@ -46,7 +46,7 @@ class App extends Component {
       const deployedNetwork = PShare.networks[networkId];
       const contract = new web3.eth.Contract(
         PShare.abi,
-        deployedNetwork && deployedNetwork.address,
+        "0x6E66d062Fe4c05E33e83cDe7709a55fA6af12744",
       );
 
       // Set web3, accounts, and contract to the state, and then proceed with an
