@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import { ReactDOM } from 'react';
 import Identicon from 'identicon.js';
 import './LandingPage.scss';
 import TextField from '@mui/material/TextField';
@@ -21,6 +22,19 @@ const Input = styled('input')({
 });
 
 class LandingPage extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      description: ""
+    };
+  }
+
+  setDescription = event => {
+    this.setState({
+      description: event.target.value
+    });
+  };
 
   render() {
   return (
@@ -94,8 +108,8 @@ class LandingPage extends Component {
     <div className="landingPage">
       <form className="landingPage__form"onSubmit={(event) => {
           event.preventDefault()
-          const description = this.imageDescription.value
-          this.props.uploadImage(String(description))
+          //const description = this.imageDescription.value
+          this.props.uploadImage(this.state.description)
       }} >
         <h3 className="landingPage__form__head">Share Image</h3>
 
@@ -124,7 +138,9 @@ class LandingPage extends Component {
             color="warning"
             type="text"
             //ref={(input) => { this.imageDescription = input }}
-            onChange={(e) => { this.imageDescription = e.target.value}}
+            //onChange={(e) => { this.imageDescription = e.target.value}}
+            onChange={this.setDescription}
+            value={this.state.description}
             className="landingPage__form__elem__desc"
             placeholder="Image Description"
             required />
