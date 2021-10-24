@@ -141,7 +141,6 @@ class LandingPage extends Component {
             //onChange={(e) => { this.imageDescription = e.target.value}}
             onChange={this.setDescription}
             value={this.state.description}
-            className="landingPage__form__elem__desc"
             placeholder="Image Description"
             required />
         </div>
