@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import PShare from "./contracts/PShare.json";
 import Navbar from './components/navbar/Navbar';
 import LandingPage from './components/landingPage/LandingPage';
@@ -134,23 +135,21 @@ class App extends Component {
       return <div>Loading Web3, accounts, and contract...</div>;
     }
     return (
-      /*<div className="App">
-        <h1>Good to Go!</h1>
-        <p>Your Truffle Box is installed and ready.</p>
-        <h2>Smart Contract Example</h2>
-        <p>
-          If your contracts compiled and migrated successfully, below will show
-          a stored value of 5 (by default).
-        </p>
-        <p>
-          Try changing the value stored on <strong>line 42</strong> of App.js.
-        </p>
-        <div>The stored value is: {this.state.storageValue}</div>
-      </div>
-      */
       <div>
-        <Navbar account={this.state.account} />
-        { this.state.loading
+        <Router>
+          <Navbar account={this.state.account} />
+          <Switch>
+            <Route exact path="/">
+              <LandingPage
+                images={this.state.images}
+                captureFile={this.captureFile}
+                uploadImage={this.uploadImage}
+              //tipImageOwner={this.tipImageOwner}
+              />
+            </Route>
+          </Switch>
+        </Router>
+        {/* this.state.loading
           ? <div id="loader" className="text-center mt-5"><p>Loading...</p></div>
           : <LandingPage
               images={this.state.images}
@@ -158,7 +157,7 @@ class App extends Component {
               uploadImage={this.uploadImage}
               //tipImageOwner={this.tipImageOwner}
             />
-        }
+        */}
       </div>
     );
   }
