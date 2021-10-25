@@ -141,7 +141,6 @@ class LandingPage extends Component {
             //onChange={(e) => { this.imageDescription = e.target.value}}
             onChange={this.setDescription}
             value={this.state.description}
-            className="landingPage__form__elem__desc"
             placeholder="Image Description"
             required />
         </div>
@@ -155,23 +154,23 @@ class LandingPage extends Component {
       {this.props.images.map((image, key) => {
         return (
           <div className="landingPage__card" key={key} >
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 500 }}>
               <CardHeader className="landingPage__card__header"
                 avatar={
                   <img
-                    className='mr-2'
-                    width='30'
-                    height='30'
+                    className="landingPage__card__header__photo"
+                    width='25'
+                    height='25'
                     src={`data:image/png;base64,${new Identicon(image.author, 30).toString()}`}
                   />
                 }
                 
-                title={image.author}
+                title={<p className="landingPage__card__header__address"> {image.author}</p>}
                 //subheader="September 14, 2016"
               />
               <CardMedia
                 component="img"
-                height="194"
+                maxHeight="500"
                 image={`https://ipfs.infura.io/ipfs/${image.imageHash}`}
                 alt="image"
               />
