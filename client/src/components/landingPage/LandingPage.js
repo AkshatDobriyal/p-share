@@ -16,6 +16,7 @@ import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
 import Typography from '@mui/material/Typography';
+import Web3 from 'web3';
 
 const Input = styled('input')({
   display: 'none',
@@ -154,19 +155,28 @@ class LandingPage extends Component {
       {this.props.images.map((image, key) => {
         return (
           <div className="landingPage__card" key={key} >
-            <Card sx={{ maxWidth: 500 }}>
+            <Card sx={{ maxWidth: 'fit-content' }}>
               <CardHeader className="landingPage__card__header"
                 avatar={
-                  <img
-                    className="landingPage__card__header__photo"
-                    width='25'
-                    height='25'
-                    src={`data:image/png;base64,${new Identicon(image.author, 30).toString()}`}
-                  />
+                    <img
+                      className="landingPage__card__header__photo"
+                      width='25'
+                      height='25'
+                      src={`data:image/png;base64,${new Identicon(image.author, 30).toString()}`}
+                    />
                 }
                 
-                title={<p className="landingPage__card__header__address"> {image.author}</p>}
-                //subheader="September 14, 2016"
+                title={
+                    <div>
+                      <p className="landingPage__card__header__address"> {image.author}</p>
+                      <br/>
+                    </div>
+                }
+                subheader={
+                  <small className="landingPage__card__header__tip">
+                    TIPS: {Web3.utils.fromWei(image.tipAmount.toString(), 'Ether')} ETH
+                  </small>
+                }
               />
               <CardMedia
                 component="img"
@@ -177,7 +187,21 @@ class LandingPage extends Component {
               <CardContent>
                 <Typography variant="body2" color="#2B364B">
                   <div className="landingPage__card__text">
-                    {image.description}
+                    <div className="landingPage__card__text__desc">
+                      {image.description}
+                    </div>
+                    <br/>
+                    <Button
+                      variant="contained" endIcon={<SendIcon />}
+                      name={image.id}
+                      onClick={(event) => {
+                        let tipAmount = Web3.utils.toWei('0.1', 'Ether')
+                        console.log(event.target.name, tipAmount)
+                        this.props.tipImageOwner(event.target.name, tipAmount)
+                      }}
+                    >
+                      TIP 0.1 ETH
+                    </Button>
                   </div>
                 </Typography>
               </CardContent>

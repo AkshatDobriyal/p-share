@@ -40,22 +40,43 @@
     &__card{
         font-size: 18px;
         font-weight: 600;
+        //position: relative;
         &__header{
+            //display: flex;
+            //flex-flow: row;
+            align-items: center;
+            text-align: center;
             font-size: 18px;
             font-weight: 600;
+            //position: relative;
             &__photo{
                 border-radius: 50%;
+                margin-top: -35px;
             }
             &__address{
+                //margin-top: auto;
                 background-color: #2B364B;
+                max-width: fit-content;
                 border-radius: 24px;
                 color: #FFFFFF;
                 padding: 7px 15px;
                 font-size: 14px;
                 font-weight: 600;
             }
+            &__tip{
+                margin-left: -40px;
+                //margin-right: auto;
+                border-style: dotted;
+                color: #2B364B;
+                max-width: max-content;
+                padding: 7px 15px;
+                font-weight: 600;
+                font-size: 20px;
+                font-family: 'Avenir Next', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
         }
         &__text{
+            color: #2B364B;
             font-size: 20px;
             font-weight: 550;
         }
