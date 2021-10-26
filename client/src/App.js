@@ -27,7 +27,7 @@ class App extends Component {
     }
 
     this.uploadImage = this.uploadImage.bind(this)
-    //this.tipImageOwner = this.tipImageOwner.bind(this)
+    this.tipImageOwner = this.tipImageOwner.bind(this)
     this.captureFile = this.captureFile.bind(this)
   }
   //state = { storageValue: 0, web3: null, accounts: null, contract: null };
@@ -47,7 +47,7 @@ class App extends Component {
       const deployedNetwork = PShare.networks[networkId];
       const contract = new web3.eth.Contract(
         PShare.abi,
-        "0x6E66d062Fe4c05E33e83cDe7709a55fA6af12744",
+        "0xbA23Ac2DfD419372e40Ab91B648110b44EA167Ad",
       );
 
       // Set web3, accounts, and contract to the state, and then proceed with an
@@ -109,12 +109,12 @@ class App extends Component {
     })
   }
 
-  /*tipImageOwner(id, tipAmount) {
+  tipImageOwner(id, tipAmount) {
     this.setState({ loading: true })
     this.state.contract.methods.tipImageOwner(id).send({ from: this.state.account, value: tipAmount }).on('transactionHash', (hash) => {
       this.setState({ loading: false })
     })
-  }*/
+  }
 
   /*runExample = async () => {
     const { accounts, contract } = this.state;
@@ -144,7 +144,7 @@ class App extends Component {
                 images={this.state.images}
                 captureFile={this.captureFile}
                 uploadImage={this.uploadImage}
-              //tipImageOwner={this.tipImageOwner}
+                tipImageOwner={this.tipImageOwner}
               />
             </Route>
           </Switch>
