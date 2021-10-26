@@ -53,7 +53,7 @@ contract PShare {
 
     }
 
-    /*function tipImageOwner(uint _id) public payable {
+    function tipImageOwner(uint _id) public payable {
         // check if the id is valid
         require(_id > 0 && _id <= imageCount, "Invalid image id");
 
@@ -75,6 +75,5 @@ contract PShare {
         // trigger event
         emit ImageTipped(_id, _image.imageHash, _image.description, _image.tipAmount, _author);
     }
-    */
 
 }
