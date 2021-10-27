@@ -1,5 +1,6 @@
 # p-share
 DESCRIPTION
+
 • An Ethereum blockchain-based decentralized application for image publishing and sharing via IPFS (InterPlanetary File System) and awarding/tipping Ethers to the image owner for a particular image.
 
 • Developed Ethereum smart contract written in Solidity for storing images and having functionalities to upload images on IPFS and applauding the image by tipping the image owner with some Ethers.
@@ -13,6 +14,7 @@ DESCRIPTION
 • Used web3.js to connect and interact with the Ethereum node in the front-end React application and access all the functionalities and states of the Ethereum smart contract.
 
 STEPS TO RUN THE DAPP
+
 1) Add the MetaMask extension from the chrome web store to your web browser.
 
 2) Sign up/Sign in to your Ethereum account via MetaMask and select the Ropsten Test Network.
