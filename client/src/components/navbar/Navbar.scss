@@ -3,7 +3,7 @@
 .nav{
     display: flex;
     flex-flow: column;
-    width: 1440px;
+    width: 100%;
     background: #2B364B;
     
     &__header{
@@ -48,7 +48,7 @@
             width: 916px;
             margin-left: 338px;
             position: relative;
-            margin-right: 48px;
+            margin-right: 47px;
             height: inherit;
             padding: auto;
             flex: auto;
@@ -61,7 +61,7 @@
                 text-decoration: none;
                 text-align: center;
                 align-items: center;
-                //margin-right: 40px;
+                margin-right: 10px;
                 color: #FFFFFF;
                 position: relative;
                 padding-top: none;
@@ -89,7 +89,7 @@
                     width: 40px;
                     border-radius: 50%;
                     //padding: 9px 21px;
-                    margin-top: 36px;
+                    margin-top: 37px;
                     //margin-right: 40px;
                     //border-radius: 24px;
                     align-items: center;
